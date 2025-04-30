@@ -67,7 +67,7 @@ export const createHandler = async (event: APIGatewayProxyEvent): Promise<APIGat
             201,
         );
     } catch (error: any) {
-        if (error instanceof Error) {
+        if (error instanceof AppError) {
             return ResponseHandler.failureResponse({
                 message: error.message,
             });
